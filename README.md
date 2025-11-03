@@ -1,70 +1,117 @@
-# Getting Started with Create React App
+# Blaster 🐛
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A lightweight bug tracking application built with React for managing and organizing bug reports efficiently.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Create Bug Tickets** - Report bugs with title, description, and priority level
+- **Priority Levels** - Categorize bugs as Low, Medium, or High priority
+- **Edit Tickets** - Update existing bug reports
+- **Delete Tickets** - Remove resolved or duplicate bugs
+- **Visual Priority Indicators** - Color-coded dots for quick priority identification
+- **State Management** - Built with React useReducer for predictable state updates
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Prerequisites
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Node.js (v14 or higher)
+- npm or yarn
 
-### `npm test`
+### Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository
+```bash
+git clone <your-repo-url>
+cd blaster
+```
 
-### `npm run build`
+2. Install dependencies
+```bash
+npm install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Start the development server
+```bash
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Usage
 
-### `npm run eject`
+### Creating a Ticket
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Fill in the ticket title
+2. Add a description of the bug
+3. Select a priority level (Low, Medium, or High)
+4. Click "Submit"
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Editing a Ticket
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Click the "Edit" button on any ticket
+2. The form will populate with the ticket's current data
+3. Make your changes
+4. Click "Submit" to save or "Cancel Edit" to discard changes
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Deleting a Ticket
 
-## Learn More
+Click the "Delete" button on any ticket to remove it from the list
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Project Structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+src/
+├── components/
+│   ├── TicketForm.js      # Form for creating/editing tickets
+│   ├── TicketItem.js      # Individual ticket display
+│   └── TicketList.js      # List container for all tickets
+├── reducers/
+│   └── ticketReducer.js   # State management logic
+├── App.js                 # Main application component
+├── App.css                # Application styles
+└── styles.css             # Additional styling
+```
 
-### Code Splitting
+## Technologies Used
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **React** - UI library
+- **React Hooks** - useState, useEffect, useReducer for state management
+- **CSS** - Custom styling
 
-### Analyzing the Bundle Size
+## State Management
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The app uses React's `useReducer` hook for state management with the following actions:
 
-### Making a Progressive Web App
+- `ADD_TICKET` - Creates a new ticket
+- `UPDATE_TICKET` - Updates an existing ticket
+- `DELETE_TICKET` - Removes a ticket
+- `SET_EDITING_TICKET` - Sets a ticket for editing
+- `CLEAR_EDITING_TICKET` - Clears the editing state
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Known Issues
 
-### Advanced Configuration
+If experiencing issues with editing tickets not working properly, ensure priority values are consistently typed (numbers vs strings). See the bug fix in the commit history.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Contributing
 
-### Deployment
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## License
 
-### `npm run build` fails to minify
+MIT License - feel free to use this project for personal or commercial purposes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Future Enhancements
+
+- [ ] Add ticket status (Open, In Progress, Resolved)
+- [ ] Filter tickets by priority
+- [ ] Search functionality
+- [ ] Persistent storage (localStorage or database)
+- [ ] User authentication
+- [ ] Ticket assignment to team members
+- [ ] Due dates and timestamps
+- [ ] Export tickets to CSV/JSON
+
+## Contact
+
+For questions or suggestions, please open an issue in the repository.
